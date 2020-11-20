@@ -19,7 +19,8 @@
   "homepage": "https://github.com/Shruti3004/Notes_App#readme",
   "dependencies": {
     "chalk": "^4.1.0",
-    "validator": "^13.1.17"
+    "validator": "^13.1.17",
+    "yargs": "^16.1.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
