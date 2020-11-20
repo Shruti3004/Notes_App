@@ -27,11 +27,25 @@ const yargs = require('yargs');
 yargs.version('1.1.0')
 
 // Create Add command
+// if we have provided the title and not specified its value by default it will be boolean
 yargs.command({
-    command: 'add',
+    command: 'add',    
     describe: 'Add a new note',
-    handler: function (){
-        console.log('Adding a new note')
+    builder: {
+        title: {
+            describe: 'Note title',
+            demandOption: true,
+            type: 'string'
+        },
+        body: {
+            describe: 'Body of a Note',
+            demandOption: true,
+            type: 'string'
+        }        
+    },
+    handler: function (argv){
+        console.log(`Title: ${argv.title}`)
+        console.log(`Body: ${argv.body}`)
     }
 })
 
@@ -64,6 +78,8 @@ yargs.command({
 
 // Add, Remove, Read, List
 
+
+yargs.parse()
 // Difference between yargs and process
-console.log(yargs.argv)
+// console.log(yargs.argv)
 // console.log(process.argv)
